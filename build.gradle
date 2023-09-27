@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io/' }
+    }
+    dependencies {
+        classpath('com.github.Fox2Code.FoxLoader:dev:1.2.18')
+    }
+}
+
+apply plugin: 'foxloader.dev'
+
+version '0.1.0'
+
+foxloader {
+    // forceReload = true
+    modId = "jelliedlightlevelindicator"
+    modName = "Light Level Indicator"
+    modVersion = project.version
+    modDesc = "Adds /toggleLightIndicators to display all nearby block light levels."
+    clientMod = "com.jellied.lightlevelindicator.LightLevelIndicatorModClient"
+
+    // Development tools don't like that both client and server define
+    // the same classes, so uncomment to disable the side inclusion.
+    // includeClient = false
+    // includeServer = false
+}
